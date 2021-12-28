@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- 주석처리 -->
+	<title></title>
+	<script>
+	// case 1-1. a 출력 후 선언 ==> OK
+	//console.log(a)		// undefined
+	//var a = 1
+	//console.log(a)		// 1
+
+	// case 1-2. (case 1-1. 부분을 모두 주석처리한 후) a 선언을 지우면 ==> 첫줄에서 에러
+	console.log(a)		// Uncaught ReferenceError: a is not defined
+	//var a = 1
+	console.log(a)		// 1
+	
+
+	// case 2. b 출력 후 할당 후 선언 ==> OK
+	console.log(b)		// undefined
+	b = 2
+	var b
+	console.log(b)		// 2
+	</script>
+</head>
+
+<body>
+	
+</body>
+</html>
