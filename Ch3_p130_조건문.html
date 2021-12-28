@@ -6,7 +6,54 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script>
-		
+
+		//let a = 273
+		//let b = 100
+		//if(a >= b) {
+		//	document.write(`[템플릿 문자열] ${a}가 ${b}보다 큽니다.`)					// [템플릿 문자열] 273가 100보다 큽니다.
+		//	document.write("[그냥 문자열] ${a}가 ${b}보다 큽니다.")						// [그냥 문자열] ${a}가 ${b}보다 큽니다.
+		//	document.write("[문자열 연결] " + a + "가 " + b + "보다 큽니다.")	// [문자열 연결] 273가 100보다 큽니다.
+		//}
+
+
+		//const date = new Date()
+		//const hour = date.getHours()
+
+		//if(hour < 12) {
+		//	document.write("오전")
+		//} else {
+		//	document.write("오후")
+		//}
+
+
+		//const input = Number(prompt("숫자를 입력하세요", "숫자"))		// prompt()의 리턴값은 항상 문자열
+
+		//switch( input % 2 ) {
+		//	case 0:
+		//		document.write("짝수입니다.")
+		//		break
+
+		//	case 1:
+		//		document.write("홀수입니다.")
+		//		break
+
+		//	default:
+		//		document.write("숫자가 아닙니다.")		// a나 b같은 입력 ==> NaN
+		//}
+
+
+		//a = "12"
+		//b = Number(a)
+
+		//document.write(b === 12 ? typeof(a) : typeof(b))		// string
+		//document.write(b !== 12 ? typeof(a) : typeof(b))		// number
+
+
+		const year = Number(prompt("생년을 넣어주세요", "연도"))
+		const zodiac = "원숭이,닭,개,돼지,쥐,소,호랑이,토끼,용,뱀,말,양".split(",")
+
+		document.write(`${year}년에 태어난 당신은 ${zodiac[year%12]}띠입니다.`)		// a입력시 NaN년에 태어난 당신은 undefined띠입니다.
+
 	</script>
 </head>
 <body>
