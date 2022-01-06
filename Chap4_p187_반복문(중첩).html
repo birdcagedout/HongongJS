@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+		<script>
+			// p. 186 중첩 반복문 : 별 피라미드
+			// 핵심 : 기준 세우기
+			// (1) 첫번째 루프 : 무조건 0부터 10까지
+			// (2) 두번째 루프 : 한줄의 "맨앞에 추가될 문자 = 기준" 잡아서 ==> 두번째 루프를 증가/감소시킬지를 결정
+
+			// 1) 1개씩 오름차순 + 왼쪽정렬 : star를 기준으로
+			//let star = "*"
+			//let blank = " "
+			//let lineString = ""
+
+			//for (let i=0; i<10; i++) {
+			//	for (let j=0; j<=i; j++) {
+			//		lineString += star
+			//	}
+			//	for (let k=lineString.length; k<10; k++) {
+			//		lineString += blank
+			//	}
+			//	console.log(lineString)
+			//	lineString = ""
+			//}
+
+			// 2) 1개씩 오름차순 + 오른쪽정렬 : blank를 기준으로
+			//let star = "*"
+			//let blank = " "
+			//let lineString = ""
+
+			//for (let i=0; i<10; i++) {
+			//	for (let j=9; j>i; j--) {
+			//		lineString += blank
+			//	}
+			//	for (let k=lineString.length; k<10; k++) {
+			//		lineString += star
+			//	}
+			//	console.log(lineString)
+			//	lineString = ""
+			//}
+
+			// 3) 1개씩 내림차순 + 왼쪽정렬 : star를 기준으로
+			//let star = "*"
+			//let blank = " "
+			//let lineString = ""
+
+			//for (let i=0; i<10; i++) {
+			//	for (let j=10; j>i; j--) {
+			//		lineString += star
+			//	}
+			//	for (let k=lineString.length; k<10; k++) {
+			//		lineString += blank
+			//	}
+			//	console.log(lineString)
+			//	lineString = ""
+			//}
+
+			// 4) 1개씩 내림차순 + 오른쪽정렬 : blank를 기준으로
+			//let star = "*"
+			//let blank = " "
+			//let lineString = ""
+
+			//for (let i=0; i<10; i++) {
+			//	for (let j=0; j<i; j++) {
+			//		lineString += blank
+			//	}
+			//	for (let k=lineString.length; k<10; k++) {
+			//		lineString += star
+			//	}
+			//	console.log(lineString)
+			//	lineString = ""
+			//}
+
+			// p. 189 중첩 반복문 : 별 피라미드 가운데 정렬
+			// 문자열 뒤집기 : 문자열변수.split("").reverse().join("")
+
+			let star = "*";
+			let blank = " ";
+			let lineString = "";
+
+			for (let i = 0; i < 14; i++) {
+				headString = "";
+				tailString = "";
+
+				// 전반부(headString) 만들기
+				for (let j = 13; j > i; j--) {
+					headString += blank;
+				}
+				for (let k = headString.length; k < 13; k++) {
+					headString += star;
+				}
+
+				// 후반부(tailString) 만들기
+				tailString = headString.split("").reverse().join("");
+
+				// 모두 합치기 : 중간에 별 하나 추가
+				lineString = headString + star + tailString;
+				console.log(lineString);
+			}
+		</script>
+	</head>
+	<body></body>
+</html>
