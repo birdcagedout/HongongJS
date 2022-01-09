@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		//// 함수 정의1 : 익명함수를 변수에 할당
+		//const func1 = function() {
+		//	console.log("func1 함수 내부입니다.")
+		//}
+
+		//// 함수 정의2 : 함수 이름을 직접 선언
+		//function func2() {
+		//	console.log("func2 함수 내부입니다.")
+		//}
+
+		//console.log(typeof func2)		// function
+		//console.log(func2)
+
+
+
+
+		//// 윤년인지 판별하는 함수
+		//function isLeapYear(year) {
+		//	let isLeap = false
+
+		//	if (year % 4 === 0) {
+		//		isLeap = true
+		//	} 
+		//	if (year % 100 === 0) {
+		//		isLeap = false
+		//	} 
+		//	if (year % 400 === 0) {
+		//		isLeap = true
+		//	}
+		//	return isLeap
+		//}
+
+		//input = Number(prompt("연도를 입력해주세요"))
+		//if (isLeapYear(input) === true) {
+		//	document.write(`${input}연도는 윤년입니다.`)
+		//} else {
+		//	document.write(`${input}연도는 윤년이 아닙니다.`)
+		//}
+
+
+
+		// p. 205 최솟값
+		const testArray = [54, 23, 44, 76, 99, 100, 9, 30, 12, 15]
+
+		function min(array) {
+			let m = array[0]
+			for (let i=0; i<array.length; i++) {
+				console.log(`[${i}]번째 m : ${m}`)
+				if (m > array[i]) {
+					m = array[i]
+				}
+			}
+			return m
+		}
+		console.log(min(testArray))
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
