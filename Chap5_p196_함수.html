@@ -47,20 +47,49 @@
 
 
 
-		// p. 205 최솟값
-		const testArray = [54, 23, 44, 76, 99, 100, 9, 30, 12, 15]
+		//// p. 205 최솟값
+		//const testArray = [54, 23, 44, 76, 99, 100, 9, 30, 12, 15]
 
-		function min(array) {
-			let m = array[0]
-			for (let i=0; i<array.length; i++) {
-				console.log(`[${i}]번째 m : ${m}`)
-				if (m > array[i]) {
-					m = array[i]
-				}
-			}
-			return m
+		//function min(array) {
+		//	let m = array[0]
+		//	for (let i=0; i<array.length; i++) {
+		//		console.log(`[${i}]번째 m : ${m}`)
+		//		if (m > array[i]) {
+		//			m = array[i]
+		//		}
+		//	}
+		//	return m
+		//}
+		//console.log(min(testArray))
+
+
+		//// p. 206 가변 매개변수
+		//function funcVarParam(...items) {
+		//	console.log(items)
+		//}
+
+		//function funcVarParam2(one, ...items) {
+		//	console.log(items)
+		//}
+
+		//funcVarParam(1,2,3,4,5)		// [1, 2, 3, 4, 5]
+		//funcVarParam2(1,2,3,4,5)	// [2, 3, 4, 5]
+		//funcVarParam2(1,2)				// [2]
+		//funcVarParam2(1)					// []
+		//console.log(typeof [])					// object
+		////console.log([].isArray())			// ERROR
+		//console.log(Array.isArray([]))	// true
+
+
+
+		// p. 211 전개연산자
+		function funcSpread(...items) {
+			console.log(items)
 		}
-		console.log(min(testArray))
+
+		const array = [1,2,3,4]
+		funcSpread(array)
+		funcSpread(...array)
 		
 	</script>
 </head>
