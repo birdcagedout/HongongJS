@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		// 과거에 가변 매개변수 func(...나머지) {} 가 없던 시절
+		// "가변 매개변수"를 구현하기 위해 
+		// 1) 함수 정의에서는 매개변수 하나도 없도록 정의
+		// 2) 함수 내부에서 arguments라는 내부변수(=매개변수들의 배열 역할, 함수내부에서만 사용가능) 사용
+		// ==> 현재에는 사용하지 않음
+		
+		function funcArguemnts() {
+			console.log(arguments)				// Arguments(3)
+			console.log(typeof arguments)	// object
+
+			for (let i=0; i<arguments.length; i++) {
+				console.log(`${i}번째 요소: ${arguments[i]}`)
+			}
+		}
+		
+		funcArguemnts(1,2,3)
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

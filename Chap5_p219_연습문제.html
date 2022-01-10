@@ -7,19 +7,21 @@
 	<title>Document</title>
 
 	<script>
-		// 입력을 받아서 그 중 최대값을 출력하는 함수
+		// 입력 중 최대값을 출력하는 함수
 		// 단, max(1,2,3,4,5) 형태로 받아도 되고, max([1,2,3,4]) 형태로 받아도 동작할 것
 		// robust한 디자인 필요
+
 		function max(first, ...rest) {
 			let output = 0
-			if (Array.isArray(first) === true) {
+
+			if (Array.isArray(first) === true) {		// 첫 매개변수가 배열인 경우
 				output = first[0]
 				for (let i=0; i<first.length; i++) {
 					if (output < first[i]) {
 						output = first[i]
 					}
 				}
-			} else {
+			} else {																// 첫 매개변수가 숫자인 경우
 				output = first
 				for (let j=0; j<rest.length; j++) {
 					if (output < rest[j]) {
@@ -30,13 +32,13 @@
 			return output
 		}
 
-		console.log(max(1,2,3,4,5))		// 숫자를 각각 넣어도 OK
+		console.log(max(1,2,3,4,5))				// 숫자를 각각 넣어도 OK
 
 		console.log(max([1,2,3,4,5,6]))		// 한개의 배열로 넣어도 OK
 
 		let input1 = [1,2,3,4,5,6,7]
-		console.log(max(...input1))			// 전개연산자 사용해도 OK
-		console.log(max(input1))				// 전개연산자 사용 안 해도 OK
+		console.log(max(...input1))				// 전개연산자 사용해도 OK
+		console.log(max(input1))					// 전개연산자 사용 안 해도 OK
 		
 	</script>
 
