@@ -83,14 +83,58 @@
 
 
 		// p. 211 전개연산자
-		function funcSpread(...items) {
-			console.log(items)
+		//function funcSpread(...items) {
+		//	console.log(items)
+		//}
+
+		//const array = [1,2,3,4]
+		//funcSpread(array)			// [Array(4)]
+		//funcSpread(...array)	// [1, 2, 3, 4]
+
+
+		// 기본 매개변수 I : 현재의 문법
+		function isLeapYear(year = new Date().getFullYear()) {
+			console.log(`year = ${year}`)
+			isLeap = false
+			if (year % 4 === 0) {
+				isLeap = true
+			}
+			if (year % 100 === 0) {
+				isLeap = false
+			}
+			if (year % 400 === 0) {
+				isLeap = true
+			}
+			return isLeap
 		}
 
-		const array = [1,2,3,4]
-		funcSpread(array)
-		funcSpread(...array)
-		
+		// 기본 매개변수 II : 과거의 문법
+		// 과거엔 기본매개변수를 사용할 수 없었기 때문에 아래와 같이 조건문으로 걸렀음
+		function isLeapYear2(year) {
+			if (typeof(year) === 'undefined') {
+				year = new Date().getFullYear()
+			}
+			// 이하 생략
+		}
+
+
+		// 기본 매개변수 III : 과거의 문법
+		// 과거 : 기본매개변수를 사용할 수 없었기 때문에 아래와 같이 복잡하게 사용했음
+		function isLeapYear3(year) {
+			year = typeof(year) === 'undefined' ? new Date().getFullYear() : year
+			// 이하 생략
+		}
+
+		// 기본 매개변수 IV : 과거의 문법
+		// 과거 : 기본매개변수를 사용할 수 없었기 때문에 아래와 같이 복잡하게 사용했음
+		function isLeapYear3(year) {
+			year = year || new Date().getFullYear()		// year가 undefined이면 뒷쪽값으로 대체
+			// 이하 생략
+		}
+
+		console.log(isLeapYear())		// 매개변수 없이 호출
+		console.log(isLeapYear(Number(prompt("연도를 넣어주세요"))))
+
 	</script>
 </head>
 <body>
