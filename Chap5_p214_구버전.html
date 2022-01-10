@@ -25,7 +25,22 @@
 		// 과거 전개 연산자 즉, 함수호출시 func(...배열) 가 없던 시절
 		// "전개 연산자"를 구현하기 위해
 		// 1) 함수.apply(null, 배열)
-		max.
+		function max() {
+			let output = arguments[0]
+			for (let j=0; j<arguments.length; j++) {
+				if (output < arguments[j]) {
+					output = arguments[j]
+				}
+			}
+			return output
+		}
+
+		result = max(1,2,3,4,5)
+		console.log(result)				// 각각 매개변수로 전달하는 경우 이상없음
+
+		console.log([1,2,3,4,5])	// 하나의 배열로 전달하는 경우 정상동작 하지 않음
+
+		console.log(max.apply(null, [1,2,3,4,5]))		// 함수.apply로 배열을 펴주면 정상동작
 
 
 
