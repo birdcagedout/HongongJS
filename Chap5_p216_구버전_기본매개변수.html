@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<script>
+		
+		function earning(wage, hours) {
+			wage = typeof(wage) != 'undefined' ? wage : 9160		// 2022년 최저시급
+			hours = typeof(hours) != 'undefined' ? hours : 0
+			return wage * hours
+		}
+
+		function earning2(wage, hours) {
+			wage = wage || 9160
+			hours = hours || 0
+			return wage * hours
+		}
+
+		console.log(earning())					// 매개변수 없이 호출 ==> wage, hours는 undefined
+		console.log(earning(12000, 9))	// 매개변수에 값 넣어 호출 ==> wage * hours
+
+		console.log(earning2())					// 매개변수 없이 호출 ==> wage, hours는 undefined
+		console.log(earning2(12000, 9))	// 매개변수에 값 넣어 호출 ==> wage * hours
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

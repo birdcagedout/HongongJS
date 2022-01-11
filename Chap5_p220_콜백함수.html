@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p220_콜백함수</title>
+
+	<script>
+		// 콜백함수 예제1
+		//function call3Times(callback) {
+		//	for (let i=0; i<3; i++) {
+		//		callback(i)
+		//	}
+		//}
+
+		//function print(i) {
+		//	console.log(`${i}번째 함수 호출`)
+		//}
+
+		//call3Times(print)
+
+
+
+		// 콜백함수 예제2 : 콜백에 사용되는 함수를 익명함수로 처리(함수 정의를 매개변수로 넘김)
+		//function call3Times(callback) {
+		//	for (let j=0; j<3; j++) {
+		//		callback(j)
+		//	}
+		//}
+
+		//call3Times(
+		//	function (i) {
+		//		console.log(`${i}번째 함수 호출`)
+		//	}
+		//)
+
+
+
+		// 콜백함수 사용예 : 배열.forEach( 함수 정의 )
+		//const numbers = [2, 3, 5, 10, 50, 100]
+
+		//numbers.forEach( function (value, index, array) {
+		//	console.log(`${array}의 ${index}번째 요소: ${value}`)
+		//})
+
+
+		// 콜백함수 사용예 : 배열.map( 함수 정의 )
+		//const numbers = [2, 3, 5, 10, 50, 100]
+		//numbersSquared = numbers.map( function (value, index, array) {
+		//	return value * value
+		//})
+
+		//console.log(numbersSquared)						// 배열(6개 원소)
+		//numbersSquared.forEach(console.log)		// 위의 결과와 비교할 것(value, index, array 다 나옴)
+
+		//// 그럼 이렇게(value만 선택) 해보면 어떨까? ==> 성공!!
+		//numbersSquared.forEach( function(value) {
+		//	console.log(value)
+		//})
+
+
+		// 콜백 함수 사용예: 배열.filter( 함수 정의 )
+		const numbers = [0,1,2,3,4,5]
+		const evenNumbers = numbers.filter( function(value) {		// [0, 2, 4]
+			return value % 2 === 0
+		})
+
+		console.log(`원래 배열  : ${numbers}`)
+		console.log(`짝수만 추출: ${evenNumbers}`)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

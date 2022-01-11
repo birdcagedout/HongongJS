@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p.226 타이머</title>
+
+	<script>
+		// 타이머 설정
+		// setTimeout(함수, 시간) ==> 한번 호출
+		// setInterval(함수, 시간) ==> 시간마다 호출
+
+		//let timer = 2
+		//setTimeout(() => {
+		//	console.log("4초 후에 실행됩니다.")
+		//}, timer*2*1000)
+
+		//let count = 0
+		//setInterval(() => {
+		//	console.log(`2초마다 실행됩니다.\t${count}번째`)
+		//	count++
+		//}, timer*1000)
+
+		
+		// 타이머 제거 
+		let intervalID
+		let timer = 2
+		let count = 0
+
+		intervalID = setInterval(() => {
+			console.log(`[setInterval 내부] 2초마다 실행됩니다.\t${count}번째`)
+			count++
+		}, timer*1000)
+
+		setTimeout(() => {
+			console.log("[setTimeout 내부에서 clearInterval 호출] 10초 후에 타이머를 종료합니다.")
+			clearInterval(intervalID)
+		}, 5*timer*1000)
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
