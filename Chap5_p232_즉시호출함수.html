@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p.232 즉시호출함수와 Scope</title>
+	
+	<script>
+		let pi = 3.14
+		console.log(`pi값은 ${pi}입니다.`)
+	</script>
+
+	<script>
+		// 아래와 같이 작성하면 오류 : Uncaught SyntaxError: Identifier 'pi' has already been declared
+		//let pi = 3.141592
+		//console.log(`pi값은 ${pi}입니다.`) 
+
+
+		// 아래와 같이 작성해야 OK : 함수작성 후 즉시 호출 = 즉시호출함수
+		(function () {
+			let pi = 3.141592
+			console.log(`pi값은 ${pi}`)
+		})()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p.235 익명함수를 사용하는 이유</title>
+	<script>
+
+		// 익명함수 : 코드 실행시 생성
+		let anonymousFunc
+
+		anonymousFunc = function () {
+			console.log("1번 익명함수 호출")
+		}
+		anonymousFunc()		// 1번 함수 호출
+
+		anonymousFunc = function () {
+			console.log("2번 익명함수 호출")
+		}
+		anonymousFunc()		// 2번 함수 호출
+
+
+		// 선언적 함수 : 코드 실행 전 생성 ==> 함수 정의 이전에 호출해도 OK
+		decFunc()
+
+		function decFunc() {
+			console.log("1번째 선언적함수 호출")
+		}
+
+		function decFunc() {
+			console.log("2번째 선언적함수 호출")
+		}
+
+
+		// 익명함수 + 선언적 함수 섞어쓰기
+		// 선언적함수는 hoisting되어 맨 앞으로 오고,
+		// 익명함수는 나중에 정의된 것으로 처리되므로
+		// 호출시에는 나중에 정의된 익명함수가 호출된다.
+
+		func = function() {
+			console.log("익명 함수 호출됨")
+		}
+
+		function func() {
+			console.log("선언적 함수 호출됨")
+		}
+
+		func()
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

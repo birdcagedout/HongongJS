@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p.233 엄격모드</title>
+	<script>
+		// 원래는 이렇게 작성해도 OK
+		//data = 10
+		//console.log(data)
+
+		// 엄격모드에서는 에러
+		// 블럭의 맨 위쪽에 선언해야함.
+		"use strict"
+
+		let data2 = 20
+		console.log(data2)
+
+		data3 = 20
+		console.log(data3)
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
