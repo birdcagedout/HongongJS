@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p.250 객체2</title>
+	<script>
+		// 객체 생성
+		const student = {}
+
+		// 동적 속성 생성
+		student.name = '김재형'
+		student.age = 44
+		student.job = 'programmer'
+
+		console.log(JSON.stringify(student, null, 2))
+
+		// 동적 속성 삭제
+		delete student.age
+
+		console.log(JSON.stringify(student, null, 2))
+
+
+
+		// 메소드 간단 생성
+		const pet = {
+			name: '구름',
+			eat (food) {
+				document.write(`${this.name}이 ${food}을(를) 먹었습니다.`)
+			}
+		}
+
+
+
+		// 화살표 함수를 사용한 메소드
+		const obj = {
+			a: function () {
+				console.log(this)
+				console.log('\n')
+			},
+
+			b: () => {
+				console.log(this)
+				console.log('\n')
+			},
+
+			c () {
+				console.log(this)
+				console.log('\n')
+			}
+		}
+
+
+		obj.a()		// this는 obj
+		obj.b()		// this는 window 객체
+		obj.c()		// this는 obj
+
+	</script>
+</head>
+<body>
+</body>
+</html>
