@@ -13,13 +13,15 @@
 		student.name = '김재형'
 		student.age = 44
 		student.job = 'programmer'
+		//console.log(JSON.stringify(student, null, 2))
 
-		console.log(JSON.stringify(student, null, 2))
-
-		// 동적 속성 삭제
+		// 동적 속성 삭제1
 		delete student.age
+		//console.log(JSON.stringify(student, null, 2))
 
-		console.log(JSON.stringify(student, null, 2))
+		// 동적 속성 삭제2
+		delete student['job']
+		//console.log(JSON.stringify(student, null, 2))
 
 
 
@@ -30,10 +32,11 @@
 				document.write(`${this.name}이 ${food}을(를) 먹었습니다.`)
 			}
 		}
-
+		pet.eat('육개장')
 
 
 		// 화살표 함수를 사용한 메소드
+		// 객체의 메소드로 화살표 함수를 사용하지 않는 이유 : this가 가리키는 것이 해당 객체가 아님
 		const obj = {
 			a: function () {
 				console.log(this)
@@ -52,9 +55,38 @@
 		}
 
 
-		obj.a()		// this는 obj
-		obj.b()		// this는 window 객체
-		obj.c()		// this는 obj
+		//obj.a()		// this는 obj
+		//obj.b()		// this는 window 객체
+		//obj.c()		// this는 obj
+
+
+
+		// p.255 연습문제 : 객체의 속성으로 객체 정의
+		const obj2 = {
+			ko: '빵',
+			en: 'bread',
+			jp: 'パン',
+			fr: 'pain',
+			es: 'pan',
+			language: {
+				ko: '한국어',
+				en: '영어',
+				jp: '일본어',
+				fr: '프랑스어',
+				es: '스페인어'
+			},
+			print: function(lang) {		// lang은 string
+				console.log(`${this.ko}는 ${this.language[lang]}로 ${this[lang]}입니다.`)
+			}
+		}
+
+		obj2.print('es')
+
+		
+		// obj2.ko 		==> OK
+		// obj2.'ko'	==> X
+
+		// obj2[ko]		==> obj2.'빵' 과는 다르다. ko라는 별도의 변수가 필요함
 
 	</script>
 </head>

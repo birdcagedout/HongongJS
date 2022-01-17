@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>p.256 객체 문법</title>
+	<script>
+
+		// 객체의 prototype에 power() 메소드 추가
+		Number.prototype.power = function (n=1) {
+			return this.valueOf() ** n
+		}
+
+		const a = 2
+		console.log('a.power(): ', a.power())
+		console.log('a.power(): ', a.power(2))
+		console.log('a.power(): ', a.power(5))
+		console.log('a.power(): ', a.power(10))
+
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>
