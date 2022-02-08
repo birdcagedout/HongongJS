@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		const year = Number(prompt("연도 입력", "예를 들면 2022"))
+		const order12 = year % 12
+		const order10 = year % 10
+		//const zodiacList = ['원숭이', '닭', '개', '돼지', '쥐', '소', '호랑이', '토끼', '용', '뱀', '말', '양']
+		const zodiacYear12List = ['신', '유', '술', '해', '자', '축', '인', '묘', '진', '사', '오', '미']
+		const zodiacYear10List = ['경', '신', '임', '계', '갑', '을', '병', '정', '무', '기']
+
+		alert(`${year}년이면 ${zodiacYear10List[order10] + zodiacYear12List[order12]}년입니다.`)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

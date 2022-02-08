@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>변수 선언 위치에 따른 에러 유무</title>
+	<script>
+		
+		const f = function() {
+			console.log(`x의 값은 ${x}`)
+		}
+
+		// 함수 호출 전에 변수 선언 ==> OK
+		//const x = 10
+		//f()
+
+		// 함수 호출 후에 변수 선언 ==> ERROR
+		
+		f()
+		//x = 20			// Uncaught ReferenceError: x is not defined
+		//let x = 20	// Uncaught ReferenceError: x is not defined
+		var x = 20		// 에러 없음 : x의 값은 undefined
+
+		
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
