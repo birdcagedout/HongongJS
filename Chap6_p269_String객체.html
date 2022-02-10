@@ -21,18 +21,25 @@
 
 		input4 = input3.map( (line) => line.split(','))
 		console.log(input4)
+		
+		// map 대신 forEach를 쓰면 어떤 문제가 생기는지 고민해볼 것
+		//input5 = input3.forEach(function(value, index, array) {
+		//	if (index === 0) {
+		//		output = value.split(',')
+		//	} else {
+		//		output += value.split(',')
+		//	}
+		//	return output
+		//})
+		//console.log(input5)
 
-		input5 = input3.forEach(function(value, index, array) {
-			if (index === 0) {
-				output = value.split(',')
-			} else {
-				output += value.split(',')
-			}
-			return output
-		})
-		console.log(input5)
-
-
+		// for 루프를 사용하면 input4와 동일
+		output = []
+		for(item of input3) {
+			line = item.split(',')
+			output.push(line)
+		}
+		console.log(output)
 
 	</script>
 </head>
