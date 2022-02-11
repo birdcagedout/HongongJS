@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.272 JSON파일</title>
+		<script>
+			
+			// JS 객체 생성
+			const data = [
+				{
+				name: '혼자 공부하는 자바스크립트',
+				price: 18000,
+				publisher: '한빛미디어'
+				},
+				{
+				name: 'HTML5 입문',
+				price: 26000,
+				publisher: '한빛아카데미'
+			}]
+
+			// JS 객체 ==> JSON 객체 : JSON.stringify(JS객체)
+			json = JSON.stringify(data)
+			console.log(json)
+
+			// 들여쓰기 2칸
+			json2 = JSON.stringify(data, null, 2)
+			console.log(json2)
+
+			// JSON ==> JS객체 : JSON.parse(JSON객체)
+			js = JSON.parse(json)
+			console.log(js)
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

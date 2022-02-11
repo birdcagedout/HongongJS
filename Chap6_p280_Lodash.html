@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.280 Lodash 라이브러리</title>
+		<!--<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js">-->
+		<script src="/chap6/lodash.js">
+		</script>
+		<script>
+			// books 객체 생성
+			const books = [
+				{
+					name: '혼공파이썬',
+					price: 18000,
+					publisher: '한빛미디어'
+				},
+				{
+					name: '혼공자바스크립트',
+					price: 18000,
+					publisher: '한빛미디어'
+				},
+				{
+					name: 'HTML5 입문',
+					price: 26000,
+					publisher: '한빛아카데미'
+				},
+				{
+					name: '머신러닝 딥러닝 입문',
+					price: 30000,
+					publisher: '위키북스'
+				},
+				{
+					name: '딥러닝을 위한 수학',
+					price: 25000,
+					publisher: '위키북스'
+				}
+			]
+
+			// Lodash 라이브러리 사용 
+			//_.sortBy(객체, 콜백함수 또는 기준속성 배열): 가격으로 정렬(오름차순)
+			const output1 = _.sortBy(books, (books) => books.price)
+			console.log(JSON.stringify(output1, null, 2))
+
+			// 이름으로 1순위 정렬 + 가격으로 2순위 정렬
+			const output2 = _.sortBy(books, ['name', 'price'])
+			console.log(JSON.stringify(output2, null, 2))
+
+			// 내림차순 정렬
+			const rev = _.reverse(output1)
+			console.log(JSON.stringify(rev, null, 2))
+
+			// orderBy(객체, 기준속성 배열, 정렬속성 배열)
+			// price는 내림차순, name은 오름차순
+			const output3 = _.orderBy(books, ['price', 'name'], ['desc', 'asc'])
+			console.log(JSON.stringify(output3, null, 2))
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
