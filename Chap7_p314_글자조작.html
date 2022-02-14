@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.314 글자 조작하기</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const a = document.querySelector('#a')
+				const b = document.querySelector('#b')
+
+				a.textContent = '<h1> textContent 속성 넣기 </h1>'	// 그냥 글자로 들어간다
+				b.innerHTML = '<h1> innerHTML 속성 </h1>'						// 태그 적용하여 들어간다.
+			})
+		</script>
+	</head>
+	<body>
+		<div id="a"></div>
+		<div id="b"></div>
+	</body>
+</html>

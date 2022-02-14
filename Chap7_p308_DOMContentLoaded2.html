@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.308 DOMContentLoaded</title>
+		<script>
+			// 콜백함수 선언
+			const h1 = (text) => `<h1>${text}</h1>`
+		</script>
+		<script>
+			// 요즘 방식
+			// 문서가 모두 load되었을 때 event = DOMContentLoaded
+			document.addEventListener('DOMContentLoaded', () => {
+				document.body.innerHTML += h1('DOMContentLoaded 이벤트 발생!!')
+			})
+
+			// 옛날방식 참고문서 : https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event
+			
+			// 옛날방식1: window.onload = function() {}
+			//window.onload = function() {
+			//	document.body.innerHTML += h1('onload 함수 내부')
+			//}
+			
+			// 옛날방식2: window.addEventListener('load', () => {})
+			//window.addEventListener('load', () => {
+			//	document.body.innerHTML += h1('window.addEventListener로 이벤트 함수 호출')
+			//})
+
+		</script>
+	</head>
+	<body>
+		<script>
+			document.body.innerHTML += h1('2번째 script 태그')
+		</script>
+		1) 본문 내용입니다. 
+		<script>
+			document.body.innerHTML += h1('3번째 script 태그')
+		</script>
+		2) 본문 끝입니다. 
+	</body>
+</html>
+
+

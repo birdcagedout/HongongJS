@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.315 속성 조작</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const rects = document.querySelectorAll('.rect')
+
+				rects.forEach( (rect, index) => {
+					const magicNum1 = Math.ceil( Math.random() * 5 )
+					const magicNum2 = Math.ceil( Math.random() * 5 )
+					const width = (magicNum1) * 100				// width = 100, 200, 300, ...
+					const height = (magicNum2) * 100				// width = 100, 200, 300, ...
+					const src = `http://placekitten.com/${width}/${height}`
+					//rect.setAttribute('src', src)
+					rect.src = src
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<img class="rect">
+		<img class="rect">
+		<img class="rect">
+		<img class="rect">
+		<img class="rect">
+		<img class="rect">
+		<img class="rect">
+	</body>
+</html>

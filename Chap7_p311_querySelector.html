@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.311 DOM 객체 가져오기</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				//// h1 태그를 가진 객체 선택
+				//const h1 = document.querySelector('h1')
+
+				//// h1 태그 객체의 text와 style 변경
+				//h1.textContent = 'H1태그 객체입니다.'
+				//h1.style.color = 'royalblue'
+				//h1.style.backgroundColor = 'orange'
+				//h1.style.padding = '10px'
+
+				// h1 태그를 가진 모든 객체 선택
+				const h1s = document.querySelectorAll('h1')
+				h1s.forEach( (value, index) => {
+					value.textContent = `${index+1}번째 H1태그 객체입니다.`
+					value.style.color = 'royalblue'
+					value.style.backgroundColor = 'orange'
+					value.style.padding = '10px'
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<h1></h1>
+		<h1></h1>
+		<h1></h1>
+		<h1></h1>
+	</body>
+</html>
