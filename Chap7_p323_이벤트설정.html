@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.323 이벤트 설정</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				let counter = 0
+				const h1 = document.querySelector('h1')
+
+				// 특정 객체에 이벤트 설정하기
+				h1.addEventListener('click', (event) => {
+					counter++;
+					h1.textContent = `클릭 횟수: ${counter}`
+				})
+
+				// 같은 객체에 2개 이상의 이벤트를 설정할 수도 있다.
+				h1.addEventListener('click', (event) => {
+					r = Math.round(Math.random() * 255)
+					g = Math.round(Math.random() * 255)
+					b = Math.round(Math.random() * 255)
+
+					h1.style.color = `rgb(${r}, ${g}, ${b})`
+					//h1.style.backgroundColor = `rgb(${b}, ${g}, ${r})`
+				})
+
+			})
+		</script>
+
+		<!--마우스 입력으로 블록 선택 되지 않도록 CSS 설정-->
+		<style>
+			h1 {
+				user-select: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>클릭</h1>
+	</body>
+</html>

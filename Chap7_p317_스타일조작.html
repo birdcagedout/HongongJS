@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.317 스타일 조작</title>
+		<script>
+			// 문서 로드 완료되면 실행
+			document.addEventListener('DOMContentLoaded', () => {
+				const divs = document.querySelectorAll('body > div')	// body태그 밑 div태그
+
+				divs.forEach( (div, index) => {
+					console.log(div, index)
+					const val = index * 10
+					div.style.height = '20px'
+					div.style.backgroundColor = `rgb(${val}, ${val}, ${val})`
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div>
+		<div></div><div></div><div></div><div></div><div></div>
+		<div></div>
+	</body>
+</html>

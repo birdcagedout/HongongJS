@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.321 문서객체 이동시키기</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// divA, divB 선택
+				const divA = document.querySelector('#first')
+				const divB = document.querySelector('#second')
+
+				// 객체 생성
+				const h1 = document.createElement('h1')
+				h1.textContent = '이동하는 h1 객체'
+				h1.style.color = 'red'
+				h1.style.backgroundColor = 'royalblue'
+				console.log(h1.parentNode)
+
+				// 서로 번갈아가면서 실행하는 함수 구현1
+				//const toFirst = () => {
+				//	divA.appendChild(h1)
+				//	setTimeout(toSecond, 1000)
+				//}
+
+				//const toSecond = () => {
+				//	divB.appendChild(h1)
+				//	setTimeout(toFirst, 1000)
+				//}
+				//toFirst()
+
+				// 서로 번갈아가면서 실행하는 함수 구현2
+				let ticker = 0
+				const toggler = () => {
+					if (ticker % 2 === 0) {
+						divA.appendChild(h1)
+						ticker = 1
+					} else {
+						divB.appendChild(h1)
+						ticker = 0
+					}
+					setTimeout(toggler, 1000)
+				}
+				toggler()
+
+				// 객체 제거
+				setTimeout( () => {
+					//papa = h1.parentNode
+					//h1.parentNode.parentNode.removeChild(papa)
+				}, 5000)
+			})
+		</script>
+	</head>
+	<body>
+		<div id="first">
+			<h1>첫번째 div 태그</h1>
+		</div>
+		<hr>
+		<div id="second">
+			<h1>두번째 div 태그</h1>
+		</div>
+	</body>
+</html>

@@ -5,6 +5,15 @@
 		<title>p.311 DOM 객체 가져오기</title>
 		<script>
 			document.addEventListener('DOMContentLoaded', () => {
+				
+				// 선택자(CSS Selector)
+				// 1) 태그: 이름 그대로 ex.'h1'
+				// 2) 클래스: 이름 앞에 온점 ex.'.id'
+				//						두개 이상의 클래스 선택시 연달아 붙여서 ex. '.id.password'
+				// 3) id: 이름 앞에 # ex.'#post'
+				// 4) 속성: <input type="text">인 경우 '[type=text]'
+				// 5) 후손: 부모 자식 띄어쓰기 'body div'+
+				
 				//// h1 태그를 가진 객체 선택
 				//const h1 = document.querySelector('h1')
 

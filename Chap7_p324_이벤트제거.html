@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>p.324 이벤트 제거</title>
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				let counter = 0;
+				let isConnect = false;
+
+				const h1 = document.querySelector('h1')
+				const p = document.querySelector('#state')
+
+				const connectButton = document.querySelector('#connect')
+				const disconnectButton = document.querySelector('#disconnect')
+
+				const listener = (event) => {
+					h1.textContent = `클릭 횟수: ${counter++}`
+				}
+
+				// 버튼에 이벤트 연결
+				connectButton.addEventListener('click', () => {
+					if (isConnect === false) {
+						h1.addEventListener('click', listener)
+						p.textContent = '연결'
+						isConnect = true
+					}
+				})
+
+				// 버튼에 이벤트 해제
+				disconnectButton.addEventListener('click', () => {
+					if (isConnect === true) {
+						h1.removeEventListener('click', listener)
+						p.textContent = '해제'
+						isConnect = false
+					}
+				})
+			})
+		</script>
+		<style>
+			h1 {
+				user-select: none;
+			}
+
+			/* 버튼 꾸미기 */
+			button {
+				width: 100px;
+				height: 50px;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			button#connect {
+				background-color: limegreen;
+			}
+			button#disconnect {
+				background-color: orangered;
+			}
+
+			/* 이벤트 연결상태 표시줄 */
+			/* 부모div에서 display:flex */
+			/* 자식div에서 flex: 숫자 */
+			/* 자식div의 flex숫자는 모든 자식들의 flex총합 대비 비율 */
+			div#container {
+				display: flex;
+				width: 200px;
+				height: 100px;
+			}
+			div#indicate {
+				flex: 75;
+			}
+			div#state {
+				flex: 25;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>클릭</h1>
+		<button id="connect"><b>이벤트 연결</b></button>
+		<button id="disconnect"><b>이벤트 제거</b></button>
+		<p></p>
+		<div id="container">
+			<div id="indicate">이벤트 연결 상태 :</div>
+			<div id="state">해제</div>
+		</div>
+	</body>
+</html>
